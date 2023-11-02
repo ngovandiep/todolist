@@ -7,7 +7,7 @@ https://elements.getpostman.com/redirect?entityId=2369311-26957b1b-1960-4f42-9dc
 	- Get User by id\
 	- Create new user\
 	- Update user data\
-	- Delete user\
+	- Delete user
 
 #task\
 	- Get all tasks\
@@ -16,6 +16,6 @@ https://elements.getpostman.com/redirect?entityId=2369311-26957b1b-1960-4f42-9dc
 	- Get all tasks of specific user\
 	- Create new task for user\
 	- Update specific task\
-	- Delete specific task\
+	- Delete specific task
 
 
