@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:8-oracle
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456789
+      MYSQL_DATABASE: todolist
+      MYSQL_USER: user_test
+      MYSQL_PASSWORD: 123456789
+    ports:
+      - 33067:3306
+    networks:
+      - app-network
+  todolist:
+    image: docker.io/diepnv/todolist:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    networks:
+      - app-network
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/todolist
+      SPRING_DATASOURCE_USERNAME: user_test
+      SPRING_DATASOURCE_PASSWORD: 123456789
+    ports:
+      - "8080:8080"
+    restart: on-failure
+
+   
+networks:
+  app-network:

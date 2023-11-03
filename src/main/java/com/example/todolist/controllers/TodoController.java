@@ -35,8 +35,8 @@ public class TodoController {
 
 	// Get all To-Do items for a specific user
 	@GetMapping("/user/{userId}")
-	public List<Task> getTodoItemsByUser(@PathVariable Long userId) {
-		return taskService.findByUserId(userId);
+	public ResponseEntity<List<Task>> getTodoItemsByUser(@PathVariable Long userId) {
+		return ResponseEntity.ok(taskService.findByUserId(userId));
 	}
 
 	@GetMapping("/user/{userId}/completed")
